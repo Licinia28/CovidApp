@@ -1,10 +1,9 @@
-function CountriesStats (props){
+function CountriesStats(props) {
     return(
         <div>
             <table>
                 <tr>
                     <th>Country name</th>
-
                     <th> Active cases</th>
                 </tr>
 
@@ -17,7 +16,7 @@ function CountriesStats (props){
                 ))}
             </table>
         </div>
-    );
+    )
 }
 
-export default CountriesStats; 
+export default CountriesStats;

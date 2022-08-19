@@ -9,8 +9,7 @@ import Search from './components/search'
 
 function App() {
   const [globalStats, setglobalStats] = useState('')
-  <Search/>
-  const [CountriesStats, setgCountrieslStats] = useState("");
+  const [coutrieslStats, setCoutrieslStats] = useState("");
 
 
   useEffect(()=>{
@@ -20,22 +19,31 @@ function App() {
       console.log(data);
 
       setglobalStats(data.Global)
-      setgCountrieslStats(data.Countries)
+      setCoutrieslStats(data.Countries)
 
 
-    }))
+    })) 
 
 
   }, [])
+  const searchCountry = ((text)=> {
+    let value = text.toLowerCase();
+
+    let result = [] ;
+    result = coutrieslStats.filter((countries)=>{
+      return countries.Country.toLowerCase().indexOf(value) !==-1
+    });
+    setCoutrieslStats (result);
+  })
 
   return (
     <div className="App">
       <GlobalStats global={globalStats}/>
-      <CountriesStats countries = {countrieslStats} />
+      <Search search={searchCountry} />
+      <CountriesStats countries={coutrieslStats}/>
 
     </div>
     
   );
-}
-
+} 
 export default App;
