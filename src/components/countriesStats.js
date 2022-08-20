@@ -1,4 +1,5 @@
 function CountriesStats(props) {
+    console.log(props)
     return(
         <div>
             <table>
@@ -8,7 +9,7 @@ function CountriesStats(props) {
                 </tr>
 
                 {props.countries.map((country) => (
-                    <tr>
+                    <tr key={country.id}>
                         <td>{country.Country}</td>
                         <td>{country.TotalConfirmed}</td>
                         <td>{country.NewConfirmed}</td>

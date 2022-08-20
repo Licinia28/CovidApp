@@ -9,7 +9,7 @@ import Search from './components/search'
 
 function App() {
   const [globalStats, setglobalStats] = useState('')
-  const [coutrieslStats, setCoutrieslStats] = useState("");
+  const [coutrieslStats, setCoutrieslStats] = useState([]);
 
 
   useEffect(()=>{
